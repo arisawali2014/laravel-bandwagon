@@ -2,9 +2,12 @@
     <div :class="this.classSnackbar + showClass()">
         <div :class="this.classMessage">
             <component id="bandwagon-link" :is="this.url != '' ? 'a' : 'span'" :href="this.url || ''">
-                <p :class="this.classTitle">{{ title }}</p>
-                <p :class="this.classSubtitle">{{ subtitle }}</p>
-                <p :class="this.classTime">{{ timeAgo() }}</p>
+                <img :src="this.image_url" :class="this.classImage" height="65" />
+                <div class="bandwagon-text">
+                    <p :class="this.classTitle">{{ title }}</p>
+                    <p :class="this.classSubtitle">{{ subtitle }}</p>
+                    <p :class="this.classTime">{{ timeAgo() }}</p>
+                </div>
             </component>
         </div>
     </div>
@@ -33,6 +36,10 @@ export default {
         classTime: {
             type: String,
             default: 'bandwagon-text bandwagon-time'
+        },
+        classImage: {
+            type: String,
+            default: 'bandwagon-image'
         }
     },
     data: function () {
@@ -41,6 +48,7 @@ export default {
             subtitle: null,
             since: null,
             url: null,
+            image_url: null,
         }
     },
     mounted() {
@@ -71,6 +79,7 @@ export default {
                         this.subtitle = response.data.subtitle
                         this.since = response.data.event_at
                         this.url = response.data.url
+                        this.image_url = response.data.image_url
                         setTimeout(this.clearMessage, Bandwagon.display * 1000);
                     }
                 })
@@ -87,27 +96,27 @@ export default {
             if (elapsed < msPerMinute) {
                 let result = Math.round(elapsed/1000);
                 let pluralString = this.pluralString(result);
-                return  `${result} second${pluralString} ago`;   
+                return  `${result} detik lalu`;
             } else if (elapsed < msPerHour) {
                 let result = Math.round(elapsed/msPerMinute);
                 let pluralString = this.pluralString(result);
-                return `${result} minute${pluralString} ago`;   
+                return `${result} menit lalu`;
             } else if (elapsed < msPerDay ) {
                 let result = Math.round(elapsed/msPerHour);
                 let pluralString = this.pluralString(result);
-                return `${result} hour${pluralString} ago`;   
+                return `${result} jam lalu`;
             } else if (elapsed < msPerMonth) {
                 let result = Math.round(elapsed/msPerDay);
                 let pluralString = this.pluralString(result);
-                return `approximately ${result} day${pluralString} ago`;   
+                return `sekitar ${result} hari lalu`;
             } else if (elapsed < msPerYear) {
                 let result = Math.round(elapsed/msPerMonth);
                 let pluralString = this.pluralString(result);
-                return `approximately ${result} month${pluralString} ago`;   
+                return `sekitar ${result} bulan lalu`;
             } else {
                 let result = Math.round(elapsed/msPerYear);
                 let pluralString = this.pluralString(result);
-                return `approximately ${result} year${pluralString} ago`;   
+                return `sekitar ${result} tahun lalu`;
             }
         },
         pluralString(num) {

@@ -17,6 +17,8 @@ class Renderer extends Component
 
     public $classTime = 'bandwagon-text bandwagon-time';
 
+    public $classImage = 'bandwagon-image';
+
     /**
      * Create a new component instance.
      *
@@ -27,13 +29,15 @@ class Renderer extends Component
         String $classMessage = 'bandwagon-message',
         String $classTitle = 'bandwagon-text bandwagon-title',
         String $classSubtitle = 'bandwagon-text bandwagon-subtitle',
-        String $classTime = 'bandwagon-text bandwagon-time'
+        String $classTime = 'bandwagon-text bandwagon-time',
+        String $classImage = 'bandwagon-image'
     ) {
         $this->classSnackbar = $classSnackbar;
         $this->classMessage = $classMessage;
         $this->classTitle = $classTitle;
         $this->classSubtitle = $classSubtitle;
         $this->classTime = $classTime;
+        $this->classImage = $classImage;
     }
 
     /**

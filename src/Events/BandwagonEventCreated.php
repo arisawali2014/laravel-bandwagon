@@ -34,6 +34,11 @@ class BandwagonEventCreated
     public $url;
 
     /**
+     * This is a url that will make the notification clickable
+     */
+    public $image_url;
+
+    /**
      * Create a new event instance.
      *
      * @param String $title
@@ -41,11 +46,12 @@ class BandwagonEventCreated
      * @param String $ip
      * @return void
      */
-    public function __construct(String $title, String $subtitle, String $ip = '', String $url = '')
+    public function __construct(String $title, String $subtitle, String $ip = '', String $url = '',String $image_url = '')
     {
         $this->title = $title;
         $this->subtitle = $subtitle;
         $this->ip = $ip;
         $this->url = $url;
+        $this->image_url = $image_url;
     }
 }

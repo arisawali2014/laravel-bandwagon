@@ -14,6 +14,7 @@ class RecordBandwagonEvent
             'subtitle' => $event->subtitle,
             'ip' => $event->ip,
             'url' => $event->url,
+            'image_url' => $event->image_url,
             'event_at' => time(),
         ]);
     }
