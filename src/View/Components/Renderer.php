@@ -7,17 +7,17 @@ use Illuminate\View\Component;
 
 class Renderer extends Component
 {
-    public $classSnackbar = 'bandwagon-snackbar';
+    public $classSnackbar = 'notiforder-snackbar';
 
-    public $classMessage = 'bandwagon-message';
+    public $classMessage = 'notiforder-message';
 
-    public $classTitle = 'bandwagon-text bandwagon-title';
+    public $classTitle = 'notiforder-text notiforder-title';
 
-    public $classSubtitle = 'bandwagon-text bandwagon-subtitle';
+    public $classSubtitle = 'notiforder-text notiforder-subtitle';
 
-    public $classTime = 'bandwagon-text bandwagon-time';
+    public $classTime = 'notiforder-text notiforder-time';
 
-    public $classImage = 'bandwagon-image';
+    public $classImage = 'notiforder-image';
 
     /**
      * Create a new component instance.
@@ -25,12 +25,12 @@ class Renderer extends Component
      * @return void
      */
     public function __construct(
-        String $classSnackbar = 'bandwagon-snackbar',
-        String $classMessage = 'bandwagon-message',
-        String $classTitle = 'bandwagon-text bandwagon-title',
-        String $classSubtitle = 'bandwagon-text bandwagon-subtitle',
-        String $classTime = 'bandwagon-text bandwagon-time',
-        String $classImage = 'bandwagon-image'
+        String $classSnackbar = 'notiforder-snackbar',
+        String $classMessage = 'notiforder-message',
+        String $classTitle = 'notiforder-text notiforder-title',
+        String $classSubtitle = 'notiforder-text notiforder-subtitle',
+        String $classTime = 'notiforder-text notiforder-time',
+        String $classImage = 'notiforder-image'
     ) {
         $this->classSnackbar = $classSnackbar;
         $this->classMessage = $classMessage;

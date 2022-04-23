@@ -1,5 +1,5 @@
 <style>
-    .bandwagon-snackbar {
+    .notiforder-snackbar {
         visibility: hidden;
         min-width: 250px;
         max-width: 400px;
@@ -15,20 +15,20 @@
         bottom: 20px;
     }
 
-    .bandwagon-snackbar.bandwagon-show {
+    .notiforder-snackbar.notiforder-show {
         visibility: visible;
         -webkit-animation: fadein 0.5s, fadeout 0.5s {{ config('bandwagon.display') - 0.5 }}s;
         animation: fadein 0.5s, fadeout 0.5s {{ config('bandwagon.display') - 0.5 }}s;
     }
 
-    .bandwagon-message {
+    .notiforder-message {
         border-radius: .5rem;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
         padding: .8rem;
         background-color: #fff;
     }
 
-    .bandwagon-text {
+    .notiforder-text {
         margin: .1rem;
         font-family: sans-serif;
         text-overflow: ellipsis;
@@ -37,38 +37,38 @@
         text-decoration: none;
     }
 
-    .bandwagon-title {
+    .notiforder-title {
         text-align: left;
     }
 
-    .bandwagon-title {
+    .notiforder-title {
         color: #000;
         text-align: left;
         font-weight: 600;
     }
 
-    .bandwagon-subtitle {
+    .notiforder-subtitle {
         color: #555;
         text-align: left;
     }
 
-    .bandwagon-time {
+    .notiforder-time {
         color: #888;
         text-align: right;
         font-size: 12px;
         margin-top: .3rem;
     }
 
-    .bandwagon-image {}
+    .notiforder-image {}
 
-    a#bandwagon-link {
+    a#notiforder-link {
         text-decoration: none;
         display: flex;
         flex-direction: row;
     }
 
     @media (max-width: 360px) {
-        .bandwagon-snackbar {
+        .notiforder-snackbar {
             max-width: 300px;
         }
     }
@@ -122,7 +122,7 @@
     }
 
 </style>
-<div id="bandwagon">
+<div id="notiforder">
     <bandwagon-renderer class-snackbar="{{ $classSnackbar }}" class-message="{{ $classMessage }}"
         class-title="{{ $classTitle }}" class-subtitle="{{ $classSubtitle }}" class-time="{{ $classTime }}"
         class-image="{{ $classImage }}" />
