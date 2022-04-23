@@ -128,6 +128,6 @@
         class-image="{{ $classImage }}" />
 </div>
 <script>
-    window.Bandwagon = @json($bandwagonScriptVariables);
+    window.NotifOrder = @json($bandwagonScriptVariables);
 </script>
 <script src="{{ asset('vendor/notiforder/app.js') }}"></script>
