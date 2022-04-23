@@ -130,4 +130,4 @@
 <script>
     window.Bandwagon = @json($bandwagonScriptVariables);
 </script>
-<script src="{{ asset('vendor/bandwagon/app.js') }}"></script>
+<script src="{{ asset('vendor/notiforder/app.js') }}"></script>

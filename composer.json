@@ -2,7 +2,7 @@
     "name": "bndwgn/laravel-bandwagon",
     "description": "Social proof package for Laravel",
     "keywords": [
-        "ordernotif"
+        "notiforder"
     ],
     "homepage": "https://github.com/bndwgn/laravel-bandwagon",
     "license": "MIT",

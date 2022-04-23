@@ -33,7 +33,7 @@ class BandwagonServiceProvider extends ServiceProvider
             ]);
 
             $this->publishes([
-                __DIR__.'/../public' => public_path('vendor/bandwagon'),
+                __DIR__.'/../public' => public_path('vendor/notiforder'),
             ], 'bandwagon-assets');
         }
 
