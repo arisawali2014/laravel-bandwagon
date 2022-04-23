@@ -3,4 +3,4 @@
 use Illuminate\Support\Facades\Route;
 
 // Event controller
-Route::get('/bandwagon-api/event', 'EventsController@index');
+Route::get('/order-api/event', 'EventsController@index');
