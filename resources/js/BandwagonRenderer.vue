@@ -1,9 +1,9 @@
 <template>
     <div :class="this.classSnackbar + showClass()">
         <div :class="this.classMessage">
-            <component id="bandwagon-link" :is="this.url != '' ? 'a' : 'span'" :href="this.url || ''">
+            <component id="notiforder-link" :is="this.url != '' ? 'a' : 'span'" :href="this.url || ''">
                 <img :src="this.image_url" :class="this.classImage" height="65" />
-                <div class="bandwagon-text">
+                <div class="notiforder-text">
                     <p :class="this.classTitle">{{ title }}</p>
                     <p :class="this.classSubtitle">{{ subtitle }}</p>
                     <p :class="this.classTime">{{ timeAgo() }}</p>
@@ -19,27 +19,27 @@ export default {
     props: {
         classSnackbar: {
             type: String,
-            default: 'bandwagon-snackbar'
+            default: 'notiforder-snackbar'
         },
         classMessage: {
             type: String,
-            default: 'bandwagon-message'
+            default: 'notiforder-message'
         },
         classTitle: {
             type: String,
-            default: 'bandwagon-text bandwagon-title'
+            default: 'notiforder-text notiforder-title'
         },
         classSubtitle: {
             type: String,
-            default: 'bandwagon-text bandwagon-subtitle'
+            default: 'notiforder-text notiforder-subtitle'
         },
         classTime: {
             type: String,
-            default: 'bandwagon-text bandwagon-time'
+            default: 'notiforder-text notiforder-time'
         },
         classImage: {
             type: String,
-            default: 'bandwagon-image'
+            default: 'notiforder-image'
         }
     },
     data: function () {
@@ -65,7 +65,7 @@ export default {
             this.subtitle = null
         },
         getPath() {
-            let path = Bandwagon.path + '/bandwagon-api/event';
+            let path = Bandwagon.path + '/order-api/event';
             if (this.since) {
                 path += '?since=' + this.since;
             }
@@ -123,7 +123,7 @@ export default {
             return num > 1 ? 's' : '';
         },
         showClass() {
-            return (this.title || this.subtitle) ? ' bandwagon-show' : '';
+            return (this.title || this.subtitle) ? ' notiforder-show' : '';
         }
     }
 }
