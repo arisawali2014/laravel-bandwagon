@@ -52,11 +52,11 @@ export default {
         }
     },
     mounted() {
-        if (Bandwagon.enabled) {
+        if (NotifOrder.enabled) {
             setTimeout(() => {
-                setInterval(this.loadMessage, Bandwagon.poll * 1000);
+                setInterval(this.loadMessage, NotifOrder.poll * 1000);
                 this.loadMessage();
-            }, Bandwagon.delay * 1000);
+            }, NotifOrder.delay * 1000);
         }
     },
     methods: {
@@ -65,7 +65,7 @@ export default {
             this.subtitle = null
         },
         getPath() {
-            let path = Bandwagon.path + '/order-api/event';
+            let path = NotifOrder.path + '/order-api/event';
             if (this.since) {
                 path += '?since=' + this.since;
             }
@@ -80,7 +80,7 @@ export default {
                         this.since = response.data.event_at
                         this.url = response.data.url
                         this.image_url = response.data.image_url
-                        setTimeout(this.clearMessage, Bandwagon.display * 1000);
+                        setTimeout(this.clearMessage, NotifOrder.display * 1000);
                     }
                 })
         },
