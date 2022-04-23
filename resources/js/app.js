@@ -4,5 +4,5 @@ import BandwagonRenderer from './BandwagonRenderer'
 Vue.component('bandwagon-renderer', BandwagonRenderer);
 
 new Vue({
-    el: '#bandwagon',
+    el: '#notiforder',
 });
